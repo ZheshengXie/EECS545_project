@@ -1,0 +1,35 @@
+{
+    "general": {
+        "trainer": "gan.GanTrainer",
+        "generator": "gan.Generator",
+        "discriminator": "gan.Discriminator",
+        "model_path": "gan_mnist.pth"
+    },
+    "model": {
+        "img_size": [1, 28, 28],
+        "latent_size": [100],
+        "D_last_layer_sigmoid": true
+    },
+    "training": {
+        "dataset": {
+            "path": "mnist.npy",
+            "normalize": "[0, 1]"
+        },
+        "num_epoch": 200,
+        "discriminator_training_steps_per_iter": 1,
+        "batch_size": 64,
+        "num_loader_worker": 1,
+        "optimizer_G": {
+            "optimizer": "Adam",
+            "lr": 0.0002,
+            "beta": [0.5, 0.999]
+        },
+        "optimizer_D": {
+            "optimizer": "Adam",
+            "lr": 0.0002,
+            "beta": [0.5, 0.999]
+        },
+        "exp_dir": "gan_mnist_0",
+        "save_every_n_epoch": 5
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "general": {
+        "trainer": "wgan.WGanTrainer",
+        "generator": "dcgan.Generator",
+        "discriminator": "dcgan.Discriminator",
+        "model_path": "dcgan_wgan_faces_500.pth"
+    },
+    "model": {
+        "img_size": [3, 96, 96],
+        "latent_size": [500],
+        "D_last_layer_sigmoid": false
+    },
+    "training": {
+        "dataset": {
+            "path": "faces.npy",
+            "normalize": "[-1, 1]"
+        },
+        "num_epoch": 3200,
+        "discriminator_training_steps_per_iter": 5,
+        "batch_size": 64,
+        "num_loader_worker": 1,
+        "clip_limit": 0.01,
+        "optimizer_G": {
+            "optimizer": "RMSprop",
+            "lr": 0.00005
+        },
+        "optimizer_D": {
+            "optimizer": "RMSprop",
+            "lr": 0.00005
+        },
+        "exp_dir": "dcgan_wgan_faces_2",
+        "save_every_n_epoch": 5
+    }
+}

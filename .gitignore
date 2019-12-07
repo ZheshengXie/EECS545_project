@@ -1,0 +1,15 @@
+.idea/
+__pycache__/
+test/
+tmp/
+
+0_raw_data/
+2_experiments/
+3_models/
+4_results/
+
+*.pyc
+*.xlsx
+
+setup_venv.sh
+project.bat
